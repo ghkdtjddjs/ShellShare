@@ -1,0 +1,7 @@
+| 구현 영역 | 사용할 시스템콜·라이브러리 | 핵심 구현 기법 |
+|---|---|---|
+| **셸·터미널 제어** | `forkpty`, `execvp`, `tcsetattr` | 가상 터미널에서 셸 실행, raw 모드로 키 입력 처리 |
+| **네트워크·다중 I/O** | `socket`, `accept`, `connect`, `poll` | TCP 기반 1:N 통신, nonblocking I/O로 여러 연결 처리 |
+| **스레드·동기화** | pthread, mutex, `pipe` | 수신과 화면 재생 분리, 공유 로그 보호와 스레드 간 알림 |
+| **이벤트 기록·재생** | `clock_gettime`, `open`, `read`, `write`, `lseek` | 출력 순서·시간 기록, 최신 수신 위치와 재생 위치 분리 |
+| **시그널·종료 처리** | `sigaction`, `waitpid` | 시그널을 이벤트 루프에서 처리하고 자식 프로세스 회수 |
